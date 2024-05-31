@@ -1,0 +1,14 @@
+[
+    {
+        "post_title": "Test Title",
+        "post_content": "This is a test blog post",
+        "post_creator": "testcreator123",
+        "post_date": "May 31, 2024"
+    },
+    {
+        "post_title": "Test Title 2",
+        "post_content": "This is another test blog post",
+        "post_creator": "testcreator12345",
+        "post_date": "May 30, 2024"
+    }
+]
