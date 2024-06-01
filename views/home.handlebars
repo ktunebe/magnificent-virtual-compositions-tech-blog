@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card-header col-md-10">
+  <h2>
+    Posts
+  </h2>
+  </div>
+  <div>
+    <ol>
+      {{#each posts}}
+        <li class="mb-3">
+          <h3>{{ this.post_title }}</h3>
+          <span>Posted by {{ this.blog_user.username }} on {{ this.post_date }}</span>
+          
+          <p>{{ this.post_content }}</p>
+          
+          
+          <a href="/post/{{this.id}}" class="btn btn-primary display-block">
+            View Post
+          </a>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+</div>
