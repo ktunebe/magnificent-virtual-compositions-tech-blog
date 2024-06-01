@@ -1,10 +1,10 @@
-// Set up dish Model
+// Set up BlogUser Model
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class BlogPost extends Model {}
+class BlogUser extends Model {}
 
-BlogPost.init(
+BlogUser.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,29 +12,22 @@ BlogPost.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        post_title: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
-        post_content: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
-        post_creator: {
+        password: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        post_date: {
-            type: DataTypes.DATE,
             allowNull: false
-        } 
-
-    },{
+        },
+    },
+    {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blogPost'
+        modelName: 'blog_user'
     }
 )
 
-module.exports = BlogPost
+module.exports = BlogUser
