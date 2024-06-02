@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="card-header col-md-10">
+  <h2 class="text-3xl text-red-500">
+    Post
+  </h2>
+  </div>
+  <div>
+    <ol>
+        <li class="mb-3">
+          <h3>{{ post.post_title }}</h3>
+          <span>Posted by {{ post.blog_user.username }} on {{ post.post_date }}</span>
+          <p class="text-red-500">{{ post.post_content }}</p>
+          
+        {{#each post.comments}}
+        <li>{{this.comment_content}}</li>
+        <li>Posted by: {{this.blog_user.username}}</li>
+        {{/each}}
+          
+        </li>
+    </ol>
+  </div>
+</div>
