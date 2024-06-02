@@ -1,22 +1,22 @@
-<div class="container">
-  <div class="card-header col-md-10">
-  <h2 class="text-3xl text-red-500">
-    Post
-  </h2>
-  </div>
+<div class="container mx-auto my-4 flex-grow">
+	<h2 class="font-blox text-5xl mt-5 mb-8">Post</h2>
   <div>
+				<div class="card w-3/4 shadow-xl border-2 border-secondary">
+					<div class="card-body">
+						<h2 class="card-title mb-5 font-bold text-2xl">{{ post.post_title }}</h2>
+						<p class="mb-2 text-xl">{{ post.post_content }}</p>
+						<div class="card-actions justify-between">
+							<span class="self-end">Author: {{ post.blog_user.username }}</span>
+							<span class="self-end">Date: {{ post.post_date }}</span>
+							<a href="/api/posts/{{post.id}}"><button class="btn bg-secondary hover:bg-accent">Add Comment</button></a>
+						</div>
+					</div>
+				</div>
     <ol>
-        <li class="mb-3">
-          <h3>{{ post.post_title }}</h3>
-          <span>Posted by {{ post.blog_user.username }} on {{ post.post_date }}</span>
-          <p class="text-red-500">{{ post.post_content }}</p>
-          
         {{#each post.comments}}
         <li>{{this.comment_content}}</li>
         <li>Posted by: {{this.blog_user.username}}</li>
         {{/each}}
-          
-        </li>
     </ol>
   </div>
 </div>

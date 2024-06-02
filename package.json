@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css",
+    "build:css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
     "watch:css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
   },
   "keywords": [],
