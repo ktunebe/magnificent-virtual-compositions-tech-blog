@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, BlogUser, Comment } = require('../models')
+const { Post, BlogUser } = require('../../models')
 
 // `/dashboard` endpoint
 

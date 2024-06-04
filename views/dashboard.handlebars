@@ -1,7 +1,7 @@
 <div class="container mx-auto my-4 flex-grow">
   <div class="flex justify-around w-3/4">
     <h2 class="font-blox text-5xl mt-5 mb-8">My Posts</h2>
-    <a class="self-center" href="/api/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent text-2xl">Create New Post</button></a>
+    <a class="self-center" href="/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent text-2xl">Create New Post</button></a>
   </div>
   <div>
     <ul>
@@ -13,7 +13,7 @@
             <p class="mb-2 text-xl">{{ this.post_content }}</p>
             <div class="card-actions justify-between">
               <span class="self-end">Date: {{ this.post_date }}</span>
-              <a href="/api/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
+              <a href="/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
             </div>
           </div>
         </div>

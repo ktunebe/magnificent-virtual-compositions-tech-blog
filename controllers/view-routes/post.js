@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, BlogUser, Comment } = require('../../models')
 
-// `/api/posts` endpoint
+// `/posts` endpoint
 
 // get one post
 router.get('/:id', async (req, res) => {
@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['comment_content'],
+                    attributes: ['comment_content', 'comment_date'],
                     include: [
                         {
                             model: BlogUser, 

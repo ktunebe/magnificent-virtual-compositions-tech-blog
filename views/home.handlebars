@@ -1,4 +1,4 @@
-<div class="container mx-auto my-4 flex-grow">
+<div class="container px-2 mx-auto my-4 flex-grow">
 	<h2 class="font-blox text-5xl mt-5 mb-8">Posts</h2>
 	<div>
 		<ul>
@@ -11,7 +11,7 @@
 						<div class="card-actions justify-between">
 							<span class="self-end">Author: {{ this.blog_user.username }}</span>
 							<span class="self-end">Date: {{ this.post_date }}</span>
-							<a href="/api/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
+							<a href="/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
 						</div>
 					</div>
 				</div>
