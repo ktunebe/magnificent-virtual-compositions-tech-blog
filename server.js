@@ -23,17 +23,18 @@ app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 app.set('views', './views')
 
-app.use(session({
-  secret: process.env.SESSION_SECRET,
+// Session
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
   resave: false,
   saveUninitialized: true,
-  cookie: {},
   store: new SequelizeStore({
     db: sequelize
   })
-}))
+};
 
-
+app.use(session(sess));
 
 
 app.use(express.json())

@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { BlogUser } = require('../../models')
 
-// `/users` endpoint
+// /users endpoint
 
 // Create new user
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await BlogUser.create(req.body);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 // Log in and check login info is correct
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await BlogUser.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
       res
@@ -52,17 +52,17 @@ router.post('/login', async (req, res) => {
   }
 });
 
-  // Log out, end session and return to home page
-  router.get('/logout', (req, res) => {
-    if (req.session.logged_in) {
-      req.session.destroy(() => {
-        res.redirect('/')
-        
-      });
-    } else {
-      res.status(404).end();
-    }
-  });
+// Log out, end session and return to home page
+router.get('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.redirect('/')
+      
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 
   module.exports = router

@@ -3,14 +3,13 @@ const { Post, BlogUser } = require('../../models')
 
 // `/dashboard` endpoint
 
-// get one post
-router.get('/:id', async (req, res) => {
-    // find a single post by id
-    const { id } = req.params
+// get user posts
+router.get('/', async (req, res) => {
+    
     try {
         const postData = await Post.findAll({
             where: {
-                user_id: id,
+                user_id: req.session.user_id
             },
             include: [
                 {

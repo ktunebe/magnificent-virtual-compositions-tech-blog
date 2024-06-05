@@ -13,8 +13,8 @@
       <nav class="flex justify-left gap-14 text-3xl p-3 pl-6">
         <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px_1px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/">Home</a>
         {{#if logged_in}}
-        <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/dashboard/{{session.user_id}}">Dashboard</a>
-        <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/login">Log Out</a>
+        <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/dashboard">Dashboard</a>
+        <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/logout">Log Out</a>
         {{else}}
         <a class="bg-secondary rounded text-primary px-2 hover:px-4 shadow-[-5px_-5px] shadow-accent hover:shadow-secondary hover:bg-accent" href="/login">Log In/Sign up</a>
         {{/if}}

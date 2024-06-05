@@ -10,7 +10,7 @@
 						<p class="mb-2 text-xl">{{ this.post_content }}</p>
 						<div class="card-actions justify-between">
 							<span class="self-end">Author: {{ this.blog_user.username }}</span>
-							<span class="self-end">Date: {{ this.post_date }}</span>
+							<span class="self-end">Date: {{format_date this.post_date }}</span>
 							<a href="/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
 						</div>
 					</div>
