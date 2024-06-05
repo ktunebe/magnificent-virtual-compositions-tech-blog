@@ -7,7 +7,7 @@
         <p class="mb-2 text-2xl">{{ post.post_content }}</p>
         <div class="card-actions justify-between">
           <span class="self-end">Author: {{ post.blog_user.username }}</span>
-          <span class="self-end">Date: {{format_date post.post_date }}</span>
+          <span class="self-end">Date: {{format_date post.createdAt }}</span>
           <button class="btn bg-secondary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
         </div>
       </div>
@@ -22,7 +22,7 @@
             <p class="mb-2 text-2xl">{{ this.comment_content }}</p>
             <div class="card-actions justify-between">
               <span class="self-end">By: {{ this.blog_user.username }}</span>
-              <span class="self-end">Date: {{format_date this.comment_date }}</span>
+              <span class="self-end">Date: {{format_date this.createdAt }}</span>
             </div>
           </div>
         </div>

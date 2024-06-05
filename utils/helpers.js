@@ -1,8 +1,11 @@
 module.exports = {
   format_date: function(date) {
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDay()
+    console.log(new Date(date.getTime()))
+    const dateFromTimestamp = new Date(date.getTime())
+    const year = dateFromTimestamp.getFullYear()
+    const month = dateFromTimestamp.getMonth() + 1
+    const day = dateFromTimestamp.getDay()
+
 
     return `${month}/${day}/${year}`
   }
