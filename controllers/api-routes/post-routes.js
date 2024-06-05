@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 const { Post, BlogUser, Comment } = require('../../models')
 
-// /post endpoint
+// api/posts endpoint
 
 // Add post 
 router.post('/', async (req, res) => {

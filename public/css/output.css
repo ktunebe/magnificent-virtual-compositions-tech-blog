@@ -10195,6 +10195,11 @@ html:has(.drawer-open.drawer-open) {
   color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }

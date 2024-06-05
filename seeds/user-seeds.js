@@ -4,10 +4,12 @@ const { BlogUser } = require('../models')
 const blogUserData = [
     {
         "username": "johndoe1",
+        "email": "john@gmail.com",
         "password": "password1234"
     },
     {
         "username": "janedoe2",
+        "email": "jane@gmail.com",
         "password": "password5678"
     }
 ]
