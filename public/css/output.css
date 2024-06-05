@@ -8610,6 +8610,14 @@ html:has(.drawer-open.drawer-open) {
   inset-inline-end: 0.25rem;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -8852,6 +8860,10 @@ html:has(.drawer-open.drawer-open) {
 
 .h-full {
   height: 100%;
+}
+
+.min-h-32 {
+  min-height: 8rem;
 }
 
 .min-h-screen {
@@ -9866,6 +9878,11 @@ html:has(.drawer-open.drawer-open) {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -10099,6 +10116,11 @@ html:has(.drawer-open.drawer-open) {
   line-height: 1;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -10185,6 +10207,11 @@ html:has(.drawer-open.drawer-open) {
   color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
@@ -10195,9 +10222,9 @@ html:has(.drawer-open.drawer-open) {
   color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
-.text-black {
+.text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(125 211 252 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -10702,6 +10729,11 @@ html:has(.drawer-open.drawer-open) {
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(125 211 252 / var(--tw-bg-opacity));
+}
+
 .hover\:px-4:hover {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -10709,6 +10741,11 @@ html:has(.drawer-open.drawer-open) {
 
 .hover\:font-bold:hover {
   font-weight: 700;
+}
+
+.hover\:text-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-secondary:hover {

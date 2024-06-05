@@ -8,7 +8,7 @@
         <div class="card-actions justify-between">
           <span class="self-end">Author: {{ post.blog_user.username }}</span>
           <span class="self-end">Date: {{format_date post.post_date }}</span>
-          <a href="/posts/{{post.id}}"><button class="btn bg-secondary hover:bg-accent">Add Comment</button></a>
+          <button class="btn bg-secondary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
         </div>
       </div>
     </div>
@@ -32,3 +32,25 @@
     {{/if}}
   </div>
 </div>
+
+{{!-- Modal to add new comment --}}
+<dialog id="newCommentModal" class="modal text-primary">
+  <div class="modal-box bg-accent">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="font-bold text-xl mb-5">Enter New Comment Info</h3>
+    <form id="newCommentForm">
+      <div class="mb-3">
+        <label for="comment_content" class="form-label text-lg">Comment</label>
+        <textarea class="form-control w-full min-h-32 p-2" name="comment_content"></textarea>
+        <input type="hidden" id="postId" value="{{post.id}}" />
+      </div>
+      <button id="newCommentButton" type="submit" class="btn bg-primary text-secondary hover:bg-secondary hover:text-primary text-2xl self-center">
+        Add Comment
+      </button>
+    </form>
+  </div>
+</dialog>
+
+<script src="/js/add-comment.js"></script>
