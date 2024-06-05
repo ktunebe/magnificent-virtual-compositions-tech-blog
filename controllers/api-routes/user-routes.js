@@ -1,31 +1,68 @@
 const router = require('express').Router();
 const { BlogUser } = require('../../models')
 
-// `/user` endpoint
+// `/users` endpoint
 
-router.get('/login', async (req, res) => {
-    try {
-    //   Get all posts and JOIN with user data
-    //   const postData = await Post.findAll({
-    //     include: [
-    //       {
-    //         model: BlogUser,
-    //         attributes: ['username'],
-    //       },
-    //     ],
-    //   });
-  
-      // Serialize data so the template can read it
-    //   const posts = postData.map((post) => post.get({ plain: true }));
-  
-      // Pass serialized data and session flag into template
-      res.render('login', { 
-        // posts, 
-        logged_in: req.session.logged_in 
+// Create new user
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Log in and check login info is correct
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+  // Log out, end session and return to home page
+  router.get('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.redirect('/')
+        
       });
-    } catch (err) {
-      res.status(500).json(err);
+    } else {
+      res.status(404).end();
     }
   });
+
 
   module.exports = router

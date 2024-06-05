@@ -3,7 +3,7 @@ const router = require('express').Router()
 const homeView = require('./home')
 const dashboardView = require('./dashboard')
 const postView = require('./post');
-const loginView = require('./login-and-signup')
+const loginView = require('./login')
 
 router.use('/', homeView)
 router.use('/dashboard', dashboardView)
