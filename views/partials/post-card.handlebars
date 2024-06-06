@@ -1,0 +1,15 @@
+			<li class="my-4">
+				<div class="card w-3/4 shadow-xl border-2 border-secondary">
+					<div class="card-body">
+						<h2 class="card-title mb-5 font-bold text-2xl">{{ this.post_title }}</h2>
+						<p class="mb-2 text-xl">{{ this.post_content }}</p>
+						<div class="card-actions justify-between">
+							<div class="self-end">
+                <span class="pr-5">Author: {{ this.blog_user.username }}</span>
+                <span class="px-5">Date: {{format_date this.createdAt }}</span>
+              </div>
+							<a href="/posts/{{this.id}}"><button class="btn bg-secondary hover:bg-accent">View Post</button></a>
+						</div>
+					</div>
+				</div>
+			</li>

@@ -16,17 +16,7 @@
     <h3 class="font-blox text-3xl ml-10 mt-6">Comments</h2>
     <ul>
       {{#each post.comments}}
-      <li class="my-2">
-        <div class="card w-2/3 ml-10 shadow-xl border-2 border-secondary">
-          <div class="card-body">
-            <p class="mb-2 text-2xl">{{ this.comment_content }}</p>
-            <div class="card-actions justify-between">
-              <span class="self-end">By: {{ this.blog_user.username }}</span>
-              <span class="self-end">Date: {{format_date this.createdAt }}</span>
-            </div>
-          </div>
-        </div>
-      </li>
+        {{> comment-card}}
       {{/each}}
     </ul>
     {{/if}}
