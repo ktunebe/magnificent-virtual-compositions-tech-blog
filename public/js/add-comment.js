@@ -2,6 +2,7 @@ const newCommentForm = document.getElementById('newCommentForm')
 const postIdEl = document.getElementById('postId')
 const postId = postIdEl.value
 
+// Add comment function
 function handleNewCommentSubmit(e) {
   e.preventDefault()
 

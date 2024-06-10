@@ -1,5 +1,6 @@
 const newPostForm = document.getElementById('newPostForm')
 
+// Add post function
 function handleNewPostSubmit(e) {
   e.preventDefault()
 

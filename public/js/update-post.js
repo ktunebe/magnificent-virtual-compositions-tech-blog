@@ -2,9 +2,9 @@ const updatePostForm = document.getElementById('updatePostForm')
 const updatePostIdEl = document.getElementById('postId')
 const updatePostId = updatePostIdEl.value
 
+// Update post function
 function handleUpdatePostSubmit(e) {
   e.preventDefault()
-
 
   const {
     post_title: postTitleInput,
