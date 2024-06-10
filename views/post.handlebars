@@ -8,7 +8,15 @@
         <div class="card-actions justify-between">
           <span class="self-end">Author: {{ post.blog_user.username }}</span>
           <span class="self-end">Date: {{format_date post.createdAt }}</span>
-          <button class="btn bg-secondary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
+          <input type="hidden" id="postId" value="{{post.id}}" />
+          <div>
+            {{!-- Update and delete buttons will only appear if post belongs to currently logged in user --}}
+            {{#if (id_check post.user_id session_user)}}
+            <button class="btn bg-secondary hover:bg-accent" id="deletePostButton">Delete Post</button>
+            <button class="btn bg-secondary hover:bg-accent" onclick="updatePostModal.showModal()">Update Post</button>
+            {{/if}}
+            <button class="btn bg-secondary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
+          </div>
         </div>
       </div>
     </div>
@@ -34,7 +42,6 @@
       <div class="mb-3">
         <label for="comment_content" class="form-label text-lg">Comment</label>
         <textarea class="form-control w-full min-h-32 p-2" name="comment_content"></textarea>
-        <input type="hidden" id="postId" value="{{post.id}}" />
       </div>
       <button id="newCommentButton" type="submit" class="btn bg-primary text-secondary hover:bg-secondary hover:text-primary text-2xl self-center">
         Add Comment
@@ -42,5 +49,29 @@
     </form>
   </div>
 </dialog>
+{{!-- Modal to update a post --}}
+<dialog id="updatePostModal" class="modal text-primary">
+  <div class="modal-box bg-accent">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="font-bold text-xl mb-5">Enter Updated Post Info</h3>
+    <form id="updatePostForm">
+      <div class="mb-3">
+        <label for="post_title" class="form-label text-lg">Title</label>
+        <input type="text" class="form-control w-full p-2" name="post_title" required>
+      </div>
+      <div class="mb-3">
+        <label for="post_content" class="form-label text-lg">Post</label>
+        <textarea class="form-control w-full min-h-32 p-2" name="post_content" required></textarea>
+      </div>
+      <button id="updatePostButton" type="submit" class="btn bg-primary text-secondary hover:bg-secondary hover:text-primary text-2xl self-center">
+        Update Post
+      </button>
+    </form>
+  </div>
+</dialog>
 
+<script src="/js/update-post.js"></script>
+<script src="/js/delete-post.js"></script>
 <script src="/js/add-comment.js"></script>

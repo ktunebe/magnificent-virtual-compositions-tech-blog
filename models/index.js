@@ -9,7 +9,8 @@ Comment.belongsTo(Post, {
 })
 // Posts have many Comments
 Post.hasMany(Comment, {
-  foreignKey: 'post_id'
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
 })
 
 // Comments belong to BlogUser

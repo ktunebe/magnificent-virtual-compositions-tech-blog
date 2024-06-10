@@ -32,7 +32,7 @@ function handleLoginFormSubmit(e) {
 loginForm.addEventListener('submit', handleLoginFormSubmit)
 
 
-// Sign in
+// Sign up
 
 function handleSignupFormSubmit(e) {
   e.preventDefault()

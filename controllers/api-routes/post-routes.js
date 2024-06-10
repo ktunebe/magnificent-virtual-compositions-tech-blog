@@ -19,6 +19,33 @@ router.post('/', async (req, res) => {
   }
 });
 
+// update a post by its id value
+router.put('/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const updatedPost = await Post.update(req.body, {
+      where: { id }
+    })
+    res.json(updatedPost)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Error updating post.')
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const deletedPost = await Post.destroy({
+      where: { id }
+    });
+  
+  res.json(deletedPost)
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // Add comment
 router.post('/:id', async (req, res) => {
   const { id } = req.params

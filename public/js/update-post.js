@@ -1,7 +1,10 @@
-const newPostForm = document.getElementById('newPostForm')
+const updatePostForm = document.getElementById('updatePostForm')
+const updatePostIdEl = document.getElementById('postId')
+const updatePostId = updatePostIdEl.value
 
-function handleNewPostSubmit(e) {
+function handleUpdatePostSubmit(e) {
   e.preventDefault()
+
 
   const {
     post_title: postTitleInput,
@@ -13,8 +16,8 @@ function handleNewPostSubmit(e) {
     post_content: postContentInput.value,
   }
 
-  fetch('/api/posts', {
-    method: 'POST',
+  fetch(`/api/posts/${updatePostId}`, {
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -29,8 +32,8 @@ function handleNewPostSubmit(e) {
         console.log(err)
       }
     })
-    .catch(err => alert('Error creating post!'))
+    .catch(err => alert('Error updating post!'))
 }
 
 
-newPostForm.addEventListener('submit', handleNewPostSubmit)
+updatePostForm.addEventListener('submit', handleUpdatePostSubmit)
