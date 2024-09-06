@@ -15,7 +15,7 @@
             <button class="btn bg-secondary hover:bg-accent" id="deletePostButton">Delete Post</button>
             <button class="btn bg-secondary hover:bg-accent" onclick="updatePostModal.showModal()">Update Post</button>
             {{/if}}
-            <button class="btn bg-secondary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
+            <button class="btn bg-secondary text-primary hover:bg-accent" onclick="newCommentModal.showModal()">Add Comment</button>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
     <form id="newCommentForm">
       <div class="mb-3">
         <label for="comment_content" class="form-label text-lg">Comment</label>
-        <textarea class="form-control w-full min-h-32 p-2" name="comment_content"></textarea>
+        <textarea class="form-control bg-white w-full min-h-32 p-2" name="comment_content"></textarea>
       </div>
       <button id="newCommentButton" type="submit" class="btn bg-primary text-secondary hover:bg-secondary hover:text-primary text-2xl self-center">
         Add Comment
